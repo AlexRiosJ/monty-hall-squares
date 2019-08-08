@@ -28,6 +28,11 @@ async function draw() {
         doors[pickedDoor] = 2;
         noLoop();
         const loosingDoor = openLoosingDoor(doors);
+        noStroke();
+        fill(255);
+        rect(0, height / 2, width, height);
+        fill(0);
+        text('Revealing another door...', width / 2, 300);
         await new Promise(res => setTimeout(res, 2000));
         fill(255, 0, 0);
         text('Nothing', loosingDoor * width / 3 + 100, 160);
